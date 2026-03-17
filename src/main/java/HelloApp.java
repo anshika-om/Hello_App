@@ -3,22 +3,18 @@ public class HelloApp {
     public static void main(String[] args) {
 
         StringBuilder nameBuilder = new StringBuilder();
+        boolean first = true;
+        for (String name : args) {
 
-        for (int i = 0; i < args.length; i++) {
-            nameBuilder.append(args[i]);
-
-            if (i < args.length - 1) {
+            if (!first) {
                 nameBuilder.append(", ");
             }
+			nameBuilder.append(name);
+			first = false;
         }
+		System.out.println("Hello " + nameBuilder.toString());
 
-        String name = nameBuilder.toString();
-
-        if (name.isEmpty()) {
-            System.out.println("Hello World");
-        } else {
-            System.out.println("Hello " + name);
-        }
+       
     }
 
 }
